@@ -12,6 +12,9 @@ public abstract class AbstractLayoutPage extends AbstractPage {
     @FindBy(xpath = "//html/body/aside/div/ul/li[4]/a")
     public WebElement environmentsPage;
 
+    @FindBy(xpath = "//html/body/aside/div/ul/li[5]/a")
+    public WebElement versionsPage;
+
     @FindBy(id = "j_info_box")
     public WebElement infoBox;
 
@@ -30,5 +33,10 @@ public abstract class AbstractLayoutPage extends AbstractPage {
     public EnvironmentsPage openEnvironmentsPage(){
         clickElement(environmentsPage);
         return new EnvironmentsPage(driver);
+    }
+
+    public VersionsPage openVersionsPage(){
+        clickElement(versionsPage);
+        return new VersionsPage(driver);
     }
 }
